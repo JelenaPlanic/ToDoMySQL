@@ -2,6 +2,7 @@ const { Router } = require("express");
 const router = Router();
 
 //GET
+router.get("/", require("../controllers/priority/renderPriorityList"));
 router.get("/add", require("../controllers/priority/renderAddPriorityPage"));
 router.get("/:id/edit", require("../controllers/priority/renderEditPriorityPage"));
 router.get("/:id/delete", require("../controllers/priority/deletePriority"));
