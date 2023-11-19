@@ -1,0 +1,9 @@
+<%- include('partials/top.ejs') %>
+
+<form action="/category/add" method="post">
+    <input type="text" placeholder="Category Name" name="categoryName" class="form-control mb-3">
+    <input type="color" name="color" class="mb-3 w-100" style="height: 50px;">
+    <button class="btn btn-primary form-control">Add</button>
+</form>
+
+<%- include('partials/bottom.ejs') %>
