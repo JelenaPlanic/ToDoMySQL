@@ -1,0 +1,17 @@
+<%- include('partials/top') %>
+
+<% if (categories.length === 0) { %>
+ <p>You don't have category list!</p>
+<% }else { %>
+ <div class="category-list">
+    <% categories.forEach(category => { %>
+     <a href="/task/category/<%= category.id %>" class="btn" style="background-color: <%= category.color; %>">
+        <span class="fs-5"><%= category.categoryName %></span>
+        <span class="fw-light fs-6"><%= category.task_count %></span>
+     </a>
+    <% }) %>
+ </div>
+
+<% } %>
+
+<%- include('partials/bottom') %>

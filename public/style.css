@@ -1,8 +1,23 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p {
+    line-height: 1.3;
+    margin: 0;
+}
+
 .wrapper {
-	max-width: 450px;
-	width: 100%;
-	margin: 0 auto;
-	height: 100%;
+    min-width: 320px;
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.card {
+    background-color: lightgray;
 }
 
 .category-list {
@@ -12,6 +27,7 @@
     gap: 10px;
 }
 
+.home-list a,
 .category-list a {
     display: flex;
     flex-direction: column;
@@ -21,4 +37,37 @@
     font-weight: 600;
     text-shadow: 0 0 3px #000;
     box-shadow: 0 0 3px 1px #000;
+}
+
+.home-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 100px;
+    gap: 10px;
+    align-content: center;
+    height: 100%;
+}
+
+
+.category-list a:hover {
+    text-shadow: none;
+}
+
+.task-list > .btn {
+    width: 100%;
+    text-align: left;
+}
+
+.badge {
+    text-shadow: 0 0 2px black;
+}
+
+input[type="color"] {
+    height: 50px;
+    cursor: pointer;
+}
+
+textarea {
+    height: 200px;
+    resize: none;
 }

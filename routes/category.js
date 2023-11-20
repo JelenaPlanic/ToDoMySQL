@@ -2,6 +2,7 @@ const {Router} = require("express");
 const router = Router();
 
 //GET
+router.get("/", require("../controllers/category/renderCategoryList"));
 router.get("/add", require("../controllers/category/renderAddCategoryPage"));
 router.get("/edit/:id", require("../controllers/category/renderEditCategoryPage"));
 router.get("/delete/:id", require("../controllers/category/deleteCategory"));

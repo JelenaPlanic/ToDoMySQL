@@ -1,11 +1,14 @@
 const pool = require("../../config/connection");
 const deleteCategory = async (req, res, next) => {
-    let values = req.params;
-    let sql = "DELETE FROM category WHERE id = :id";
+    let values = {...req.params};
+    let query = ["DELETE FROM category WHERE id = :id", "DELETE FROM task WHERE categoryID = :id"];
 
     try 
     {
-        let [result] = await pool.execute({sql, values});
+        query.forEach(async(sql) => {
+            let [result] = await pool.execute({sql, values});
+        });
+        
         res.redirect("/config");
     } 
     catch (error)

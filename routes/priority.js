@@ -13,7 +13,7 @@ router.get("/:id/delete", require("../controllers/priority/deletePriority")); //
 
 //POST
 router.post("/add", require("../controllers/priority/addPriority"));
-router.post("/:id/update", require("../controllers/priority/updatePriority")); //* kaskadno?
+router.post("/:id/update", require("../controllers/priority/updatePriority")); //* 
 
 
 module.exports = router;
