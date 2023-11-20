@@ -6,6 +6,7 @@ router.get("/", require("../controllers/priority/renderPriorityList"));
 router.get("/add", require("../controllers/priority/renderAddPriorityPage"));
 router.get("/:id/edit", require("../controllers/priority/renderEditPriorityPage"));
 router.get("/:id/delete", require("../controllers/priority/deletePriority"));
+router.get("/:id/tasks", require("../controllers/priority/renderPriorityTasks"));
 
 
 
