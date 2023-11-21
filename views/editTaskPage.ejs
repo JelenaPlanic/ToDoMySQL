@@ -1,0 +1,25 @@
+<%- include('partials/top.ejs') %>
+<form action="/task/edit/<%= task[0].id %>" method="post">
+    <h3>Update task</h3>
+    <input class="form-control mb-3" type="text" name="task" value="<%= task[0].task %>">
+    <textarea class="form-control mb-3" name="description" cols="30" rows="10"><%= task[0].description %></textarea>
+    <input class="form-control mb-3" type="date" name="deadline" value="<%= inputDate(task[0].deadline) %>">
+    
+    <select class="form-control mb-3" name="categoryID">
+        <% categories.forEach((category)=>{ %>
+            <option <%= category.id === task[0].categoryID ? "selected" : "" %>
+            value="<%= category.id; %>"><%= category.categoryName; %></option>
+        <% }); %>
+    </select>
+
+    <select class="form-control mb-3" name="priorityID">
+        <% priorities.forEach((priority)=>{ %>
+            <option <%= priority.id === task[0].priorityID? "selected" : "" %>
+            value="<%= priority.id; %>"><%= priority.priorityName; %></option>
+        <% }); %>
+    </select>
+
+    <button class="btn btn-primary form-control">Update</button>
+</form>
+
+<%- include('partials/bottom.ejs') %>
