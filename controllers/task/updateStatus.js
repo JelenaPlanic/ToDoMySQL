@@ -11,7 +11,7 @@ const updateStatus = async(req, res, next) => {
     try 
     {
         let[result] = await pool.execute({sql, values});
-        res.redirect("/task");
+        res.redirect(req.headers.referer);
         
     } 
     catch (error) 
