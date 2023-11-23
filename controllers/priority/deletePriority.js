@@ -5,9 +5,12 @@ const deletePriority = async(req, res, next) => {
 
     try 
     {
-        query.forEach(async(sql) => {
-            let [result] = await pool.execute({sql, values});
-        });
+        // query.forEach(async(sql) => {
+        //     let [result] = await pool.execute({sql, values});
+        // });
+        for (let sql of query) {
+            let [result] = await pool.execute({ sql, values });
+        }
         
         res.redirect("/config");
     } 

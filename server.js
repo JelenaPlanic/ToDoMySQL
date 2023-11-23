@@ -9,6 +9,14 @@ app.use(express.static(__dirname + "/node_modules/bootstrap/dist/css"));
 app.use(express.static(__dirname + "/node_modules/bootstrap-icons/font"));
 app.use("/", require("./routes"));
 
+app.use((error, req, res, next) => {
+    if(error)
+    {
+        res.render("error", {error});
+    }
+    
+});
+
 
 
 
