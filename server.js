@@ -18,8 +18,6 @@ app.use((error, req, res, next) => {
 });
 
 
-
-
 app.listen(PORT, (error) => {
     if(error)
     {
