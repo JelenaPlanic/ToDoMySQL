@@ -1,10 +1,10 @@
 <%- include('partials/top') %>
-
-<% if (priority.length === 0) { %>
+<h3 class="text-center">Priority List</h3> <br>
+<% if (priorities.length === 0) { %>
  <p>You don't have priority list!</p>
 <% }else { %>
  <div class="category-list">
-    <% priority.forEach(el => { %>
+    <% priorities.forEach(el => { %>
      <a href="/priority/<%= el.id %>/tasks" class="btn" style="background-color: <%= el.color; %>">
         <span class="fs-5"><%= el.priorityName %></span>
         <span class="fw-light fs-6"><%= el.task_count %></span>

@@ -5,8 +5,8 @@ const renderPriorityTasks = async (req, res, next) => {
 
     let values = {priorityID: req.params.id};
     let sql = "SELECT task.*, "+
-              "category.categoryName, category.color as category_color, " +
-              "priority.priorityName, priority.color as priority_color "+
+              "category.categoryName, category.color as categoryColor, " +
+              "priority.priorityName, priority.color as priorityColor "+
               "FROM task "+
               "JOIN category ON category.id = task.categoryID "+
               "JOIN priority ON priority.id = task.priorityID "+
@@ -15,10 +15,9 @@ const renderPriorityTasks = async (req, res, next) => {
     try
     {
         let [tasks] = await pool.execute({sql, values});
-        console.log("Tasks with JOIN Category and Priority ", tasks);
-        let flag = tasks.length > 0? tasks[0].priorityName : "";
-
-        res.render("tasks", {tasks,flag, formatDate});
+        //console.log("Tasks with JOIN Category and Priority ", tasks);
+        //let flag = tasks.length > 0? tasks[0].priorityName : "";
+        res.render("allTaskByPriority", {tasks, formatDate});
     }
     catch(error)
     {
